@@ -45,7 +45,7 @@ img {
 
 @media screen and (min-width:1158px) {
     .container {
-        width: 1156px;
+        width: 1158px;
         padding: 0 15px;
     }
 }
@@ -57,6 +57,12 @@ img {
     box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
         0px 1px 1px rgba(46, 47, 66, 0.16),
         0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+@media screen and (max-width:767px) {
+    .header {
+        padding: 16px 0;
+    }
 }
 
 .containor-header {
@@ -91,22 +97,34 @@ img {
     gap: 40px
 }
 
+@media screen and (max-width:767px) {
+    .containor-nav-list {
+        display: none;
+
+    }
+}
+
 .containor-nav-link {}
 
 
 .containor-nav-link .link {
-    position: relative;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    color: #404bbf;
+    color: #2e2f42;
     padding: 24px 0;
     display: block;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.containor-nav-link .link::after {
+.current.link {
+    position: relative;
+    color: #404bbf;
+}
+
+
+.current::after {
     content: "";
     width: 48px;
     height: 4px;
@@ -135,22 +153,42 @@ img {
     margin-left: auto;
 }
 
-
+@media screen and (max-width:767px) {
+    .containor-address {
+        display: none;
+    }
+}
 
 .address-list {
     display: flex;
-    gap: 40px
+    flex-direction: column;
+    gap: 12px
+}
+
+@media screen and (min-width:1158px) {
+    .address-list {
+        flex-direction: row;
+        gap: 40px;
+
+    }
 }
 
 .address-link {}
 
 .address-link .link {
     text-decoration: none;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width:1158px) {
+    .address-link .link {
+        font-size: 16px;
+
+    }
 }
 
 .address-link:hover {
@@ -159,6 +197,26 @@ img {
 
 .address-link:focus {
     color: #404bbf;
+}
+
+.icon-header-menu {
+    position: absolute;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+@media screen and (min-width:767px) {
+    .icon-header-menu {
+        display: none;
+    }
+
 }
 
 
@@ -172,19 +230,21 @@ img {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding: 120px 0;
+    padding: 72px 0;
 
 }
 
 @media screen and (min-width:768px) {
     .containor-section-one {
         max-width: 768px;
+        padding: 112px 0;
     }
 }
 
 @media screen and (min-width:1158px) {
     .containor-section-one {
         max-width: 1440px;
+        padding: 188px 0;
     }
 }
 
@@ -199,7 +259,7 @@ img {
     letter-spacing: 0.02em;
     color: #ffffff;
     margin: 0 auto;
-    padding-bottom: 48px;
+    margin-bottom: 48px;
 
 }
 
@@ -390,11 +450,11 @@ img {
 }
 
 @media screen and (min-width:768px) {
-    .section-two-title {}
+    .containor-team {}
 }
 
 @media screen and (min-width:1158px) {
-    .section-two-title {
+    .containor-team {
         padding: 120px 0;
     }
 }
@@ -672,15 +732,21 @@ img {
 
 .containor-footer .container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 72px;
 }
 
 @media screen and (min-width:768px) {
     .containor-footer .container {
-        width: 528px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 580px;
         gap: 24px;
         row-gap: 54px;
+        text-align: left;
+        align-items: flex-start;
     }
 }
 
@@ -697,7 +763,15 @@ img {
 
 .containor-footer-list {}
 
+@media screen and (min-width:1158px) {
+    .containor-footer-list {
+        margin-right: 120px;
+    }
+
+}
+
 .footer-logo {
+    display: block;
     margin-bottom: 16px;
     font-family: "Raleway", sans-serif;
     font-weight: 700;
@@ -722,6 +796,12 @@ img {
 
 .container-social {}
 
+@media screen and (min-width:1158px) {
+    .container-social {
+        margin-right: 80px;
+    }
+
+}
 
 .footer-text-social {
     margin-bottom: 16px;
@@ -770,7 +850,7 @@ img {
 
 @media screen and (min) {}
 
-453px .subscribe-text {
+.subscribe-text {
     margin-bottom: 16px;
     font-weight: 500;
     font-size: 16px;
@@ -781,7 +861,15 @@ img {
 
 .subscribe-form {
     display: flex;
+    align-items: center;
+    flex-direction: column;
     gap: 24px;
+}
+
+@media screen and (min-width:768px) {
+    .subscribe-form {
+        flex-direction: row;
+    }
 }
 
 .subscribe-label {
@@ -804,6 +892,7 @@ img {
 }
 
 .subscribe-input::placeholder {
+
     font-weight: 400;
     font-size: 12px;
     line-height: 2;
@@ -815,8 +904,7 @@ img {
     min-width: 165px;
     height: 40px;
     display: flex;
-    Justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
     background-color: #4d5ae5;
     color: #fff;
     font-weight: 500;
@@ -825,6 +913,8 @@ img {
     cursor: pointer;
     border: none;
     border-radius: 4px;
+    justify-content: center;
+    align-items: center;
 }
 
 .subscribe-icon {
@@ -1065,4 +1155,61 @@ img {
     border: none;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     margin-left: 95.5px;
+}
+
+/* Header modal */
+
+.header-modal {
+    opacity: 0;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding: 72px 0 40px 16px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width:768px) {
+    .header-modal {
+        display: none;
+    }
+}
+
+@media screen and (min-width:1158px) {
+    .header-modal {}
+}
+
+.containor-list-mobal {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    margin-bottom: auto;
+}
+
+.link-mobal {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+}
+
+.link-mobil-adres {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.12;
+    letter-spacing: 0.02em;
+    color: #434455;
+    font-style: normal;
+}
+
+.header-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
